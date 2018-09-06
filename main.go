@@ -6,6 +6,11 @@ import (
 
 var companies = []*Company{}
 
+func ActionsAndFeatures(af ActionFeature) {
+	af.ShowCompanyFeature()
+	af.SignEmployee()
+}
+
 // ShowFeatures Display stuff from a company
 func ShowFeatures(f Feature) {
 	f.ShowCompanyFeature()
@@ -25,18 +30,24 @@ func main() {
 	companies = append(companies, &Company{"microsoft", "silicon valley", 100, CanIInvoque})
 
 	for _, company := range companies {
-		var a Action
-		var f Feature
-		a = company
-		f = company
-		f.ShowCompanyFeature()
-		a.SignEmployee()
-		f.ShowCompanyFeature()
-		i := company.ShowSomething()
-		fmt.Printf("%d \n", i)
-		company.myFunction()
+		var af ActionFeature
+		af = company
+		af.ShowCompanyFeature()
+		af.SignEmployee()
+		af.ShowCompanyFeature()
+		// var a Action
+		// var f Feature
+		// a = company
+		// f = company
+		// f.ShowCompanyFeature()
+		// a.SignEmployee()
+		// f.ShowCompanyFeature()
+		// i := company.ShowSomething()
+		// fmt.Printf("%d \n", i)
+		// company.myFunction()
 		// ShowFeatures(company)
 		// RunActions(company)
 		// ShowFeatures(company)
+		// ActionsAndFeatures(company)
 	}
 }

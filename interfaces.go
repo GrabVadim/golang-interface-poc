@@ -1,5 +1,10 @@
 package main
 
+type ActionFeature interface {
+	Action
+	Feature
+}
+
 // Action 's Compnay
 type Action interface {
 	SignEmployee()
